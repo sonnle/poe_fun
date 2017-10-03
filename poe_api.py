@@ -14,6 +14,16 @@ def test_poe():
         print len(j['stashes'][i]['items'])
         print ''
 
+        for k in range(len(j['stashes'][i]['items'])):
+            if j['stashes'][i]['items'][k]['name']:
+                print j['stashes'][i]['items'][k]['name'][28:]
+                try:
+                    if j['stashes'][i]['items'][k]['note']:
+                        print j['stashes'][i]['items'][k]['note']
+                except KeyError:
+                    print j['stashes'][i]['stash']
+            print ''
+
 
 if __name__ == '__main__':
     test_poe()
